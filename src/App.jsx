@@ -9,10 +9,7 @@ function App() {
     const [from, setForm] = useState("inr")
     const [to, setTo] = useState("pkr")
     const [convertedAmount, setConvertedAmount] = useState(0)
-
-
     const currencyInfo = useCurrencyInfo(from)
-
     const options = Object.keys(currencyInfo)
 
     const swap = () => {
@@ -22,17 +19,13 @@ function App() {
         setAmount(convertedAmount)
     }
 
-
     const convert = () => {
         setConvertedAmount(amount * currencyInfo[to])
     }
 
     return (
-
-
         <div
-            className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat bg-animation"
-            
+            className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat bg-animation"  
         >
             <div className="w-full">
                 <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
@@ -75,11 +68,9 @@ function App() {
                                 currencyOptions={options}
                                 onCurrencyChange={(currency) => {
                                     setTo(currency)
-
                                 }}
                                 selectCurrency={to}
                                 amountDisabled
-
                             />
                         </div>
                         <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
@@ -89,9 +80,6 @@ function App() {
                 </div>
             </div>
         </div>
-
-
-
     )
 }
 
